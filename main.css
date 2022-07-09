@@ -81,16 +81,33 @@ header .title .inner .material-icons:hover{
 
 .Todo .inner ul li{
     position: relative;
+    display: flex;
     background-color: aquamarine;
-    cursor: pointer;
     height: 40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
     text-align: left;
     box-sizing: border-box;
     border-radius: 5px;
+    transition-property: border-radius;
     transition-delay: .4s;
+}
+
+.Todo .inner ul li .todo_name{
+    padding-top: 11px;
+    cursor: pointer;
+    width: 90%;
+}
+
+.Todo .inner ul li input{
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.Todo .inner ul li.done{
+    background-color: rgb(99, 198, 165);
+}
+
+.Todo .inner ul li.done .todo_name{
+    text-decoration: line-through;
 }
 
 .Todo .inner ul li:hover{
@@ -101,6 +118,7 @@ header .title .inner .material-icons:hover{
     background-color: rgb(98, 199, 165);
     border-radius: 5px 5px 0 0;
     margin-bottom: 0;
+    transition-property: border-radius;
     transition-delay: .0s;
 }
 
@@ -171,6 +189,21 @@ header .title .inner .material-icons:hover{
     transition-duration: .1s;
 }
 
+.Todo .inner ul .more .confirm{
+    visibility: hidden;
+    padding-top: 35px;
+    padding-left: 170px;
+    flex-grow: 1;
+    border-top: 1px solid rgb(98, 199, 165);
+    transition-delay: .0s;
+    transition-duration: .1s;
+}
+
+.Todo .inner ul .more .confirm input{
+    width: 100px;
+    height: 35px;
+}
+
 .Todo .inner ul .more .alert_term input{
     width: 100px;
 }
@@ -200,6 +233,11 @@ header .title .inner .material-icons:hover{
 }
 
 .Todo .inner ul .more.checked .alert_term{
+    transition-delay: .3s;
+    visibility: visible;
+}
+
+.Todo .inner ul .more.checked .confirm{
     transition-delay: .3s;
     visibility: visible;
 }
